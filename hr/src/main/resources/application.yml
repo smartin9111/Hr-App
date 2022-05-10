@@ -1,0 +1,15 @@
+hr:
+  human:
+    smart:
+      bigpercent: '101'
+      beginerpercent: '0'
+      yearlimitsenior: "3650\t"
+      mediumpercent: '5'
+      yearlimitjunior: '913'
+      yearlimitmedior: '1825'
+      smallpercent: '2'
+    def:
+      percent: '5'
+spring:
+  profiles:
+    active: smart
