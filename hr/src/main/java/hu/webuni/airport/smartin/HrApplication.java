@@ -30,7 +30,7 @@ public class HrApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		Employee lajos = new Employee(1,"Tóth Lajos", 450000, LocalDateTime.parse("2005-04-30T10:15:30"));
-		Employee taksony = new Employee(1,"Kovács Taksony", 550000, LocalDateTime.parse("2021-05-31T10:15:30"));
+		Employee taksony = new Employee(1,"Kovács Taksony", 550000, LocalDateTime.parse("2019-08-31T10:15:30"));
 		Employee elemer = new Employee(1,"Gipsz Elemér", 350000, LocalDateTime.parse("2018-05-31T10:15:30"));
 		
 		System.out.println(salaryService.newSalary(lajos));

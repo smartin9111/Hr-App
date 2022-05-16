@@ -50,7 +50,7 @@ public class HrConfigProperties {
 	public static class Smart{
 		private int yearlimitsenior;
 		private int yearlimitmedior;
-		private int yearlimitjunior;
+		private double yearlimitjunior;
 
 		private int bigpercent;
 		private int mediumpercent;
@@ -68,10 +68,10 @@ public class HrConfigProperties {
 		public void setYearlimitmedior(int yearlimitmedior) {
 			this.yearlimitmedior = yearlimitmedior;
 		}
-		public int getYearlimitjunior() {
+		public double getYearlimitjunior() {
 			return yearlimitjunior;
 		}
-		public void setYearlimitjunior(int yearlimitjunior) {
+		public void setYearlimitjunior(double yearlimitjunior) {
 			this.yearlimitjunior = yearlimitjunior;
 		}
 		public int getBigpercent() {

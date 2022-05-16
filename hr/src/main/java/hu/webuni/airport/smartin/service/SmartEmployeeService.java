@@ -3,6 +3,7 @@ package hu.webuni.airport.smartin.service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,20 @@ public class SmartEmployeeService  implements EmployeeService{
 		
 		LocalDateTime startDate = employee.getStartedWorkinTheCompany();
 		LocalDateTime thisDate = employee.getStartedWorkinTheCompany().now();
-		long diffDate = ChronoUnit.DAYS.between(startDate, thisDate);
+		//Period age = Period.between(startDate, thisDate);
+		double diffMonths = (ChronoUnit.MONTHS.between(startDate, thisDate)%12)/12.0;
+		double diffDate = (ChronoUnit.YEARS.between(startDate, thisDate))+diffMonths;
 		
+		
+		System.out.println(diffMonths);
 		System.out.println(diffDate);
+
 		
 		if( diffDate >= config.getHuman().getSmart().getYearlimitsenior()) 
 			return config.getHuman().getSmart().getBigpercent();
-		if(diffDate >= config.getHuman().getSmart().getYearlimitmedior() && diffDate < config.getHuman().getSmart().getYearlimitsenior()) 
+		if(diffDate >= config.getHuman().getSmart().getYearlimitmedior())  
 			return config.getHuman().getSmart().getMediumpercent();
-		if(diffDate >= config.getHuman().getSmart().getYearlimitjunior() && diffDate < config.getHuman().getSmart().getYearlimitmedior()) 
+		if(diffDate >= config.getHuman().getSmart().getYearlimitjunior()) 
 			return config.getHuman().getSmart().getSmallpercent();
 		else return config.getHuman().getSmart().getBeginerpercent();	
 	}
